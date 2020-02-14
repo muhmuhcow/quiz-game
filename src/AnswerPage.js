@@ -1,4 +1,5 @@
 import React from 'react'
+import "./styles/AnswerPage.css"
 
 class AnswerPage extends React.Component {
 
@@ -15,8 +16,8 @@ class AnswerPage extends React.Component {
     render(){
         return(
 
-            <div>
-                <p> Quiz Object </p>
+            <div className="AnswerPage">
+                <p> Answer Page </p>
                 <p> {this.state.id} </p>
                 <p> {this.state.answered ? "Answered!" : "Not Answered!"} </p>
                 <p> {this.state.correctness ? "Correct!" : "Not Correct!"} </p>

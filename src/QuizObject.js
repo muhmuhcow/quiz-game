@@ -1,5 +1,6 @@
 import React from 'react'
 import AnswerPage from './AnswerPage';
+import "./styles/QuizObject.css"
 
 class QuizObject extends React.Component {
 
@@ -17,7 +18,7 @@ class QuizObject extends React.Component {
     render(){
         return(
 
-            <div>
+            <div className="QuizObject">
                 <p> Quiz Object </p>
                 <p> {this.state.id} </p>
                 <p> {this.state.person} </p>
