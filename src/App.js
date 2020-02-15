@@ -3,27 +3,44 @@ import './styles/App.css'
 import QuizObject from './QuizObject'
 import QuizData from "./QuizData"
 
-function App() {
+class App extends React.Component {
 
-  const quizData = QuizData.map(data => <QuizObject
+  constructor(){
+    super();
+
+    this.state = {
+      quizData : [],
+      currentIndex : "",
+      score : ""
+    }
+  }
+
+  componentDidMount(){
+  const myQuizData = QuizData.map(data => <QuizObject
         key = {data.id}
         id = {data.id}
         person = {data.person}
         question = {data.question}
         answer = {data.answer}
         />)
+       
+        console.log(myQuizData);
+        console.log("SAKJSAKJASKJ");
 
-  console.log(quizData);
-  console.log("SAKJSAKJASKJ");
-        
-  return (
-      <div className="App">
-        <h1 className="listTitle">My Game</h1>
-        
-        {quizData}
+        this.setState({
+          quizData : myQuizData
+        });
+  }      
 
-      </div>
+  
+  render(){      
+    return (
+        <div className="App">
+         <h1 className="listTitle">My Game</h1>
+          {this.state.quizData[0]}
+        </div>
   );
+  }
 }
 
 export default App;
