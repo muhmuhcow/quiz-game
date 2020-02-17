@@ -21,6 +21,7 @@ class AnswerObject extends React.Component {
                 <p> {this.state.id} </p>
                 <p> {this.state.answered ? "Answered!" : "Not Answered!"} </p>
                 <p> {this.state.correctness ? "Correct!" : "Not Correct!"} </p>
+                <button onClick={this.props.updateIndex}> Next </button>
             </div>
 
         )

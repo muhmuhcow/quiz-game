@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/App.css'
 import QuizObject from './QuizObject'
 import QuizData from "./QuizData"
+import BonusQuestion from './BonusQuestion';
 
 class App extends React.Component {
 
@@ -9,9 +10,10 @@ class App extends React.Component {
     super();
     this.state = {
       quizData : [],
-      currentIndex : "",
-      score : ""
+      currentIndex : 0,
+      score : 0
     }
+    this.updateIndex = this.updateIndex.bind(this);
   }
 
   componentDidMount(){
@@ -22,20 +24,34 @@ class App extends React.Component {
         question = {data.question}
         options = {data.options}
         answer = {data.answer}
-        />)
+        updateIndex = {this.updateIndex}
+        />) 
+        //console.log(myQuizData);
+        //console.log("SAKJSAKJASKJ");
 
         this.setState({
           quizData : myQuizData
         });
-  }      
+  }    
+  
+  updateIndex(){
+    this.setState(prevState => {
+      return  ({currentIndex : prevState.currentIndex + 1})
+    });
+  }
 
   render(){      
     return (
         <div className="App">
          <h1 className="listTitle">My Game</h1>
-          {this.state.quizData[2]}
+         {this.state.quizData[this.state.currentIndex]}
+         {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
+         {(this.state.currentIndex) > this.state.quizData.length ? "Finished" : null}
+         {this.state.currentIndex+1}
+         <br/><br/><br/>
+         
         </div>
-  );
+  ); 
   }
 }
 
