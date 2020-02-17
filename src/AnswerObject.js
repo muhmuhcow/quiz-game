@@ -1,7 +1,7 @@
 import React from 'react'
 import "./styles/AnswerPage.css"
 
-class AnswerPage extends React.Component {
+class AnswerObject extends React.Component {
 
     constructor(props){
         super(props);
@@ -27,4 +27,4 @@ class AnswerPage extends React.Component {
     }
 }
 
-export default AnswerPage
+export default AnswerObject

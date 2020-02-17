@@ -7,7 +7,6 @@ class App extends React.Component {
 
   constructor(){
     super();
-
     this.state = {
       quizData : [],
       currentIndex : "",
@@ -21,23 +20,20 @@ class App extends React.Component {
         id = {data.id}
         person = {data.person}
         question = {data.question}
+        options = {data.options}
         answer = {data.answer}
         />)
-       
-        console.log(myQuizData);
-        console.log("SAKJSAKJASKJ");
 
         this.setState({
           quizData : myQuizData
         });
   }      
 
-  
   render(){      
     return (
         <div className="App">
          <h1 className="listTitle">My Game</h1>
-          {this.state.quizData[0]}
+          {this.state.quizData[2]}
         </div>
   );
   }
