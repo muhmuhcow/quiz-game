@@ -1,5 +1,5 @@
 import React from 'react'
-import AnswerPage from './AnswerPage';
+import AnswerObject from './AnswerObject';
 import "./styles/QuizObject.css"
 
 class QuizObject extends React.Component {
@@ -10,29 +10,44 @@ class QuizObject extends React.Component {
             id: props.id,
             person : props.person,
             question : props.question,
+            options : props.options,
             answer: props.answer,
+            answered: null,
+            correctness: null,
             img: ""
         }
     }
 
-    render(){
-        return(
+    handleAnswer(event){
+        let {value} = event.target;
+        console.log(value);
+    }
 
+    render(){
+        var optionButtons = this.state.options.map(option => 
+            (<button 
+                value={option}
+                onClick={this.handleAnswer}
+                >{option}</button>));
+
+        return(
             <div className="QuizObject">
                 <p> Quiz Object </p>
                 <p> {this.state.id} </p>
                 <p> {this.state.person} </p>
                 <p> {this.state.question} </p>
-                <p> {this.state.answer ? "Yes" : "No"} </p>
-                <AnswerPage 
-                    key = {this.state.id}
-                    id = {this.state.id}
-                    answered = {false}
-                    correctness = {false}
-                    updateIndex = {this.props.updateIndex}
-                />
+                {optionButtons}
+                
+                { this.state.answered ?           
+                    <AnswerObject 
+                        key = {this.state.id}
+                        id = {this.state.id}
+                        answered = {false}
+                        correctness = {false}
+                    /> :
+                    null
+                }
             </div>
-
         )
     }
 }

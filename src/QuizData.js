@@ -3,35 +3,40 @@ const todosData = [
         id: 1,
         person : "Will",
         question : "Did Will polish his boss's shoes as a graduate?",
-        answer: true,
+        options: ["Yes","No"],
+        answer:"No",
         img: ""
     },
     {
         id: 2,
         person : "Andrew",
         question : "Is Andrew allergic to milk?",
-        answer: true,
+        options: ["Yes","No"],
+        answer:"Yes",
         img: ""
     },
     {
         id: 3,
         person : "Haris",
-        question : "Does Haris have an investment plan with Spaceship?",
-        answer: false,
+        question : "How many does a week does Haris come into work?",
+        options: ["7","3","1"],
+        answer:"3",
         img: ""
     },
     {
         id: 4,
-        person : "Sitggen",
-        question : "Does Sitggen like pies?",
-        answer: false,
+        person : "Stephan",
+        question : "How many cats does Stephan have?",
+        options: ["3","4","2"],
+        answer:"",
         img: ""
     },
     {
         id: 5,
         person : "Chris",
         question : "Does Chris know react js?",
-        answer: true,
+        options: ["Yes","No"],
+        answer:"Yes",
         img: ""
     }
 ]

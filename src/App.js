@@ -8,7 +8,6 @@ class App extends React.Component {
 
   constructor(){
     super();
-
     this.state = {
       quizData : [],
       currentIndex : 0,
@@ -23,10 +22,10 @@ class App extends React.Component {
         id = {data.id}
         person = {data.person}
         question = {data.question}
+        options = {data.options}
         answer = {data.answer}
         updateIndex = {this.updateIndex}
-        />)
-       
+        />) 
         //console.log(myQuizData);
         //console.log("SAKJSAKJASKJ");
 
