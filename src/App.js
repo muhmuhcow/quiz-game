@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       quizData : [],
       currentIndex : 0,
-      score : ""
+      score : 0
     }
     this.updateIndex = this.updateIndex.bind(this);
   }
@@ -46,7 +46,8 @@ class App extends React.Component {
         <div className="App">
          <h1 className="listTitle">My Game</h1>
          {this.state.quizData[this.state.currentIndex]}
-         {(this.state.currentIndex) >= this.state.quizData.length ? <BonusQuestion /> : null}
+         {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
+         {(this.state.currentIndex) > this.state.quizData.length ? "Finished" : null}
          {this.state.currentIndex+1}
          <br/><br/><br/>
          
