@@ -29,6 +29,7 @@ class QuizObject extends React.Component {
                     id = {this.state.id}
                     answered = {false}
                     correctness = {false}
+                    updateIndex = {this.props.updateIndex}
                 />
             </div>
 

@@ -10,9 +10,10 @@ class App extends React.Component {
 
     this.state = {
       quizData : [],
-      currentIndex : "",
+      currentIndex : 0,
       score : ""
     }
+    this.updateIndex = this.updateIndex.bind(this);
   }
 
   componentDidMount(){
@@ -22,6 +23,7 @@ class App extends React.Component {
         person = {data.person}
         question = {data.question}
         answer = {data.answer}
+        updateIndex = {this.updateIndex}
         />)
        
         console.log(myQuizData);
@@ -30,14 +32,20 @@ class App extends React.Component {
         this.setState({
           quizData : myQuizData
         });
-  }      
+  }    
+  
+  updateIndex(){
+    this.setState(prevState => {
+      return  ({currentIndex : prevState.currentIndex + 1})
+    });
+  }
 
   
   render(){      
     return (
         <div className="App">
          <h1 className="listTitle">My Game</h1>
-          {this.state.quizData[0]}
+          {this.state.quizData[this.state.currentIndex]}
         </div>
   );
   }
