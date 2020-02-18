@@ -38,7 +38,8 @@ class QuizObject extends React.Component {
 
     render(){
         var optionButtons = this.state.options.map(option => 
-            (<button 
+            (<button
+                key = {option} 
                 value={option}
                 onClick={this.handleAnswer}
                 >{option}</button>));

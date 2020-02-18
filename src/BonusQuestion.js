@@ -28,10 +28,10 @@ class BonusQuestion extends React.Component {
                     <label>Credit card number:</label> <br/>
                     <input type="text" name="number" onChange={this.handleChange} value={this.state.number} /> <br/>
                     <label>Date of expiry:</label> <br/>
-                    <input type="text" name="expiry" value={this.state.number} /> <br/>
+                    <input type="text" name="expiry" value={this.state.number} onChange={this.handleChange} /> <br/>
                     <label>CVV number:</label> <br/>
-                    <input type="text" name="cvv" value={this.state.number} /> <br/>
-                    <input type="submit" value="Submit" onClick={this.props.updateIndex}></input> <br/>
+                    <input type="text" name="cvv" value={this.state.number} onChange={this.handleChange}/> <br/>
+                    <input type="submit" value="Submit" onClick={this.props.updateIndex} ></input> <br/>
                     <label>*** Your connection to this site is definetely secure and any information submitted will be hashed and kept confidential</label>
                 
             </div>
