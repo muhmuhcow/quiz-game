@@ -64,6 +64,14 @@ const todosData = [
         img: ""
     },
     {
+        id: 4,
+        person : "Alison",
+        question : "Which one of these places has Alison previously worked at?",
+        options: ["Isreal","Malaysia","Russia"],
+        answer:"Isreal",
+        img: ""
+    },
+    {
         id: 5,
         person : "Chris",
         question : "Does Chris know react js?",
