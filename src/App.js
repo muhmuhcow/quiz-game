@@ -14,6 +14,7 @@ class App extends React.Component {
       score : 0
     }
     this.updateIndex = this.updateIndex.bind(this);
+    this.addScore = this.addScore.bind(this);
   }
 
   componentDidMount(){
@@ -25,6 +26,7 @@ class App extends React.Component {
         options = {data.options}
         answer = {data.answer}
         updateIndex = {this.updateIndex}
+        addScore = {this.addScore}
         />) 
         //console.log(myQuizData);
         //console.log("SAKJSAKJASKJ");
@@ -40,6 +42,12 @@ class App extends React.Component {
     });
   }
 
+  addScore(){
+    this.setState(prevState => {
+      return  ({score : prevState.score + 1})
+    });
+  }
+
   render(){      
     return (
         <div className="App">
@@ -48,7 +56,9 @@ class App extends React.Component {
          {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
          {(this.state.currentIndex) > this.state.quizData.length ? "Finished" : null}
          {this.state.currentIndex+1}
-         <br/><br/><br/>
+         <br />
+         <br/>
+         {"current score: " + this.state.score}  
          
         </div>
   ); 

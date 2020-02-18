@@ -25,15 +25,18 @@ class QuizObject extends React.Component {
         console.log(value);
         console.log(this.state.answer);
 
-        value === this.state.answer ?
+        if (value === this.state.answer){
             this.setState({
                 answered : true,
                 correctness : true
-            }) :
+            })
+            //this.props.addScore
+        }   else {
             this.setState({
                 answered : true,
                 correctness : false
             })
+        }
     }
 
     render(){
