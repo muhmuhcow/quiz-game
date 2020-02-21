@@ -68,7 +68,7 @@ class App extends React.Component {
   render(){      
     return (
         <div className="App">
-         <h1 className="listTitle"></h1>
+         <h1 className="listTitle">:))))</h1>
          {this.state.quizData[this.state.currentIndex]}  
          {(this.state.currentIndex) < 0 ? <StartPage updateIndex={this.updateIndex}/> : null}  
          {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}

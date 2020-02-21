@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({
 app.listen(PORT,()=>console.log(`listening on ${PORT}`));
 
 app.get("/",function(req,res){
-    res.send("yo wuddup")
-    
+    res.send("yo wuddup");
+}); 
+
+app.get("/getStuff",function(req,res){
+    res.send({stuff : "myStuff"});
 }); 
