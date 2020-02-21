@@ -16,36 +16,53 @@ class QuizObject extends React.Component {
             correctness: null,
             img: ""
         }
+
+        this.handleAnswer = this.handleAnswer.bind(this);
     }
 
     handleAnswer(event){
         let {value} = event.target;
         console.log(value);
+        console.log(this.state.answer);
+
+        if (value === this.state.answer){
+            this.setState({
+                answered : true,
+                correctness : true
+            })
+            this.props.addScore();
+        }   else {
+            this.setState({
+                answered : true,
+                correctness : false
+            })
+        }
+        this.props.updateIndex()
     }
 
     render(){
         var optionButtons = this.state.options.map(option => 
-            (<button 
+            (<button
+                key = {option} 
                 value={option}
-                onClick={this.handleAnswer}
+                onClick={this.handleAnswer}              
                 >{option}</button>));
 
         return(
             <div className="QuizObject">
-                <p> Quiz Object </p>
-                <p> {this.state.id} </p>
-                <p> {this.state.person} </p>
-                <p> {this.state.question} </p>
-                {optionButtons}
                 
                 { this.state.answered ?           
                     <AnswerObject 
                         key = {this.state.id}
                         id = {this.state.id}
-                        answered = {false}
-                        correctness = {false}
+                        answered = {this.state.answered}
+                        correctness = {this.state.correctness}
+                        updateIndex = {this.props.updateIndex}
                     /> :
-                    null
+                    <div>
+                        <p> {this.state.question} </p>
+                        {optionButtons}
+                    </div>
                 }
             </div>
         )

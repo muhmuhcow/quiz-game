@@ -1,9 +1,8 @@
-.QuizObject{
-    background-color : rgba(255,255,255,0.3);
+.FinishedPage{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
     font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
 }
