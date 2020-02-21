@@ -18,6 +18,7 @@ class App extends React.Component {
     this.updateIndex = this.updateIndex.bind(this);
     this.addScore = this.addScore.bind(this);
     this.resetIndex = this.resetIndex.bind(this);
+    this.resetScore = this.resetScore.bind(this);
   }
 
   componentDidMount(){
@@ -49,6 +50,13 @@ class App extends React.Component {
     this.setState({
       currentIndex: -1
     });
+    this.resetScore()
+  }
+
+  resetScore(){
+    this.setState({
+      score: 0
+    });
   }
 
   addScore(){
@@ -64,7 +72,13 @@ class App extends React.Component {
          {this.state.quizData[this.state.currentIndex]}  
          {(this.state.currentIndex) < 0 ? <StartPage updateIndex={this.updateIndex}/> : null}  
          {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
-         {(this.state.currentIndex) > this.state.quizData.length ? <FinishedPage score={this.state.score} resetIndex={this.resetIndex}/> : null}
+         {(this.state.currentIndex) > this.state.quizData.length ? 
+          <FinishedPage 
+          score={this.state.score} 
+          resetIndex={this.resetIndex} 
+          updateIndex={this.updateIndex}
+          resetScore={this.resetScore}
+          /> : null}
          
          <br />
          <br/>
