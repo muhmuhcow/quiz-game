@@ -30,13 +30,14 @@ class QuizObject extends React.Component {
                 answered : true,
                 correctness : true
             })
-            //this.props.addScore
+            this.props.addScore();
         }   else {
             this.setState({
                 answered : true,
                 correctness : false
             })
         }
+        this.props.updateIndex()
     }
 
     render(){
@@ -44,7 +45,7 @@ class QuizObject extends React.Component {
             (<button
                 key = {option} 
                 value={option}
-                onClick={this.handleAnswer}
+                onClick={this.handleAnswer}              
                 >{option}</button>));
 
         return(
@@ -59,9 +60,6 @@ class QuizObject extends React.Component {
                         updateIndex = {this.props.updateIndex}
                     /> :
                     <div>
-                        <p> Quiz Object </p>
-                        <p> {this.state.id} </p>
-                        <p> {this.state.person} </p>
                         <p> {this.state.question} </p>
                         {optionButtons}
                     </div>

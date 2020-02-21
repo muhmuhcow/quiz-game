@@ -12,8 +12,8 @@ const todosData = [
         person : "Sitggen",
         question : "Which university did Sitggen study at?",
         options: ["Melbourne Uni","Monash","RMIT"],
-        answer:"4",
-        img: "Monash"
+        answer:"Monash",
+        img: ""
     },
     {
         id: 3,
