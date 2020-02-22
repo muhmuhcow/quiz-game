@@ -13,12 +13,14 @@ class App extends React.Component {
     this.state = {
       quizData : [],
       currentIndex : -1,
-      score : 0
+      score : 0,
+      username: ""
     }
     this.updateIndex = this.updateIndex.bind(this);
     this.addScore = this.addScore.bind(this);
     this.resetIndex = this.resetIndex.bind(this);
     this.resetScore = this.resetScore.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
   }
 
   componentDidMount(){
@@ -48,7 +50,7 @@ class App extends React.Component {
 
   resetIndex(){
     this.setState({
-      currentIndex: -1
+      currentIndex: 0
     });
     this.resetScore()
   }
@@ -65,12 +67,19 @@ class App extends React.Component {
     });
   }
 
+  updateUsername({target}){
+    console.log(target.placeholder)
+    //console.log(value)
+    this.setState({username : target.placeholder});
+    this.updateIndex();
+  }
+
   render(){      
     return (
         <div className="App">
-         <h1 className="listTitle">:))))</h1>
+         <h1 className="listTitle">{this.state.username ? ("Player: " + this.state.username) : null}</h1>
          {this.state.quizData[this.state.currentIndex]}  
-         {(this.state.currentIndex) < 0 ? <StartPage updateIndex={this.updateIndex}/> : null}  
+         {(this.state.currentIndex) < 0 ? <StartPage updateUsername={this.updateUsername}/> : null}  
          {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
          {(this.state.currentIndex) > this.state.quizData.length ? 
           <FinishedPage 
