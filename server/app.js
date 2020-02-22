@@ -26,12 +26,19 @@ app.get("/getStuff",function(req,res){
 }); 
 
 
-app.get("/addShitToDatabase",function(req,res){
-    var newUser = new userSchema();
-    newUser.username = "Bob";
-    newUser.score = "12";
-    newUser.save(function(err,data){
-        if(err){console.log(err);}
-        console.log("success!");
-    });
-}); 
+ app.get("/addShitToDatabase",function(req,res){
+     var newUser = new userSchema();
+     newUser.username = "Bob";
+     newUser.score = "12";
+     newUser.save(function(err,data){
+         if(err){console.log(err);}
+         console.log("success!");
+     });
+ }); 
+
+ app.post("/quizData",function(req,res){
+     //console.log("post request caught!")
+     console.log(req.body)
+     //res.redirect('/') 
+     res.send("finished!") 
+ })

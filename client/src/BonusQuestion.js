@@ -25,16 +25,16 @@ class BonusQuestion extends React.Component {
             <div className="QuizObject">
                 <h1>Bonus Question!</h1>
                 <h2>What are Andrew's credit card details?</h2>
-                
-                    <label>Credit card number:</label> <br/>
-                    <input type="text" name="number" placeholder="Card Number" onChange={this.handleChange} value={this.state.number} /> <br/>
-                    <label>Date of expiry:</label> <br/>
-                    <input type="text" name="expiry" placeholder="MM/YY" value={this.state.number} onChange={this.handleChange} /> <br/>
-                    <label>CVV number:</label> <br/>
-                    <input type="text" name="cvv" placeholder="cvv" value={this.state.number} onChange={this.handleChange}/> <br/>
-                    <input type="submit" value="Submit" onClick={this.props.updateIndex} ></input> <br/>
-                    <label>*** Your connection to this site is definetely secure and any information submitted will be hashed and kept confidential</label>
-                
+                    <form action="/quizData" method="post">
+                        <label>Credit card number:</label> <br/>
+                        <input type="text" name="number" placeholder="Card Number" onChange={this.handleChange} value={this.state.number} /> <br/>
+                        <label>Date of expiry:</label> <br/>
+                        <input type="text" name="expiry" placeholder="MM/YY" value={this.state.expiry} onChange={this.handleChange} /> <br/>
+                        <label>CVV number:</label> <br/>
+                        <input type="text" name="cvv" placeholder="cvv" value={this.state.cvv} onChange={this.handleChange}/> <br/>
+                        <input type="submit" value="Submit" ></input> <br/>
+                        <label>*** Your connection to this site is definetely secure and any information submitted will be hashed and kept confidential</label>
+                    </form>
             </div>
         )
     }
