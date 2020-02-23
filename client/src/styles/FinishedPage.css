@@ -1,0 +1,20 @@
+.FinishedPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    font-size: 150%;
+}
+
+input{
+  width: 350px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 120%;
+}
