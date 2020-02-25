@@ -77,17 +77,21 @@ class App extends React.Component {
   render(){      
     return (
         <div className="App">
-         <h1 className="listTitle">{this.state.username ? ("Player: " + this.state.username) : null}</h1>
+         <h1 className="listTitle">
+          {this.state.username ? ("Player: " + this.state.username) : null}
+         </h1>
          {this.state.quizData[this.state.currentIndex]}  
-         {(this.state.currentIndex) < 0 ? <StartPage updateUsername={this.updateUsername}/> : null}  
-         {(this.state.currentIndex) === this.state.quizData.length ? <BonusQuestion updateIndex={this.updateIndex}/> : null}
+         {(this.state.currentIndex) < 0 ?
+            <StartPage updateUsername={this.updateUsername}/> : null}  
+         {(this.state.currentIndex) === this.state.quizData.length ? 
+            <BonusQuestion username={this.state.username} score={this.state.score} updateIndex={this.updateIndex}/> : null}
          {(this.state.currentIndex) > this.state.quizData.length ? 
-          <FinishedPage 
-          score={this.state.score} 
-          resetIndex={this.resetIndex} 
-          updateIndex={this.updateIndex}
-          resetScore={this.resetScore}
-          /> : null}
+            <FinishedPage 
+            score={this.state.score} 
+            resetIndex={this.resetIndex} 
+            updateIndex={this.updateIndex}
+            resetScore={this.resetScore}
+            /> : null}
          
          <br />
          <br/>

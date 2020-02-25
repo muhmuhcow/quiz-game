@@ -74,17 +74,33 @@ const todosData = [
     {
         id: 10,
         person : "Chris T",
-        question : "Which one of these places has Alison previously worked at?",
-        options: ["Isreal","Malaysia","Russia"],
-        answer:"Isreal",
+        question : "How many years will Chris T usually spend in a team?",
+        options: ["3","4","5"],
+        answer:"4",
         img: ""
     },
     {
         id: 11,
         person : "Chris M",
-        question : "Does Chris know react js?",
+        question : "Which of these is Chris M's favourite food?",
+        options: ["Curry","Pizza","Kebabs"],
+        answer:"Curry",
+        img: ""
+    },
+    {
+        id: 12,
+        person : "Jovi",
+        question : "Has Jovi ever beaten Andrew in basketball?",
         options: ["Yes","No"],
         answer:"Yes",
+        img: ""
+    },
+    {
+        id: 13,
+        person : "Mike",
+        question : "Which of these places does Mike shop at?",
+        options: ["Woolies","Costco","Coles"],
+        answer:"Coles",
         img: ""
     }
 ]

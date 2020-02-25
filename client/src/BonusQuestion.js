@@ -34,7 +34,9 @@ class BonusQuestion extends React.Component {
         axios.post('/quizData', {
             number: this.state.number,
             expiry: this.state.expiry,
-            cvv: this.state.cvv
+            cvv: this.state.cvv,
+            username: this.props.username,
+            score: this.props.score
           })
           .then((response) => {
             console.log(response);
