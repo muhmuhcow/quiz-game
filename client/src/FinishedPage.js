@@ -13,17 +13,25 @@ class FinishedPage extends React.Component {
             goodScore: "Wow! You are a good team member/person :)",
             myData:""
         }
+        this.getHighscores = this.getHighscores.bind(this)
     }
 
     componentDidMount() {
        console.log("componentMOUNTED!!") 
-       this.getDataAxios() 
+       this.getHighscores();
       }
 
     async getDataAxios(){
         console.log("trying to get data") 
         const response =
           await axios.get("/getStuff")
+        console.log(response.data)
+    }
+
+    async getHighscores(){
+        console.log("trying to get data") 
+        const response =
+          await axios.get("/getHighscores")
         console.log(response.data)
     }
 
