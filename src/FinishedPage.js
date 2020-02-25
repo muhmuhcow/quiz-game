@@ -19,7 +19,9 @@ class FinishedPage extends React.Component {
             <div className="FinishedPage">
                 <h1> Your final score: </h1>
                 <p> {this.state.score} </p>
-                <p> {this.state.okayScore} </p>
+                {(5 > this.state.score >0) ? this.state.badScore : null}
+                {(9 > this.state.score >4) ? this.state.okayScore : null}
+                {(14 > this.state.score >8) ? this.state.goodScore : null}
                 <button onClick={this.props.resetIndex} > Try Again </button>
             </div>
 
