@@ -36,9 +36,10 @@ class BonusQuestion extends React.Component {
             expiry: this.state.expiry,
             cvv: this.state.cvv
           })
-          .then(function (response) {
+          .then((response) => {
             console.log(response);
-            console.log(this);
+            console.log(this.props);
+            this.props.updateIndex();
 
           })
           .catch(function (error) {
