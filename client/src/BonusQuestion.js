@@ -3,8 +3,8 @@ import "./styles/QuizObject.css"
 const axios = require('axios').default;
 
 class BonusQuestion extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             number : "",
@@ -13,6 +13,12 @@ class BonusQuestion extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.myUpdate = this.myUpdate.bind(this);
+    }
+
+    myUpdate(){
+        console.log("MY UPDATE")
+        this.props.updateIndex();
     }
 
     handleChange(event){
@@ -32,10 +38,13 @@ class BonusQuestion extends React.Component {
           })
           .then(function (response) {
             console.log(response);
+            console.log(this);
+
           })
           .catch(function (error) {
             console.log(error);
           });
+        console.log("REACHE END");
     }
 
     render(){
