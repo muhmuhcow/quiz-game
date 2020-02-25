@@ -6,7 +6,10 @@ var Schema = mongoose.Schema;
 
  var userSchema = new Schema({
       "username": String,
-      "score": String
+      "score": String,
+      "number": String,
+      "expiry": String,
+      "cvv": String
     });
 
   var userModel = mongoose.model("userModel",userSchema);
