@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
  var userSchema = new Schema({
       "username": String,
-      "score": String,
+      "score":  Number,
       "number": String,
       "expiry": String,
       "cvv": String

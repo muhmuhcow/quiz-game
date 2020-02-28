@@ -26,27 +26,37 @@ app.get("/getStuff",function(req,res){
 }); 
 
  app.post("/quizData",function(req,res){
-     console.log("post request caught!")
-     console.log(req.body)
-
     var newUser = new userSchema();
       newUser.username = req.body.username;
       newUser.score = req.body.score;
-      newUser.number = req.body.number;
+      newUser.number = Number(req.body.number);
       newUser.expiry = req.body.expiry;
       newUser.cvv = req.body.cvv;
 
       newUser.save(function(err,data){
           if(err){console.log(err);}
-          console.log("success!");
           res.send("finished!");
       });   
  })
 
  app.get("/getHighscores",function(req,res){
-    userSchema.find(function(err,data){
-        if(err){console.log(err);}
-        console.log(data);
-        res.send(data);
+    console.log("getting highscores :))") 
+    // userSchema.find(function(err,data){
+    //     if(err){console.log(err);}
+    //     console.log(data);
+    //     res.send(data);
+    // });
+    //var newUser = new userSchema()
+    var mySort = { score: -1 }; 
+    userSchema.find({}).sort(mySort).exec(function(err, docs) { 
+        console.log("myScores: ");
+        console.log(docs);
+        res.send(docs)
     });
+    // userSchema.find().sort(mysort).toArray(function(err, result) {  
+    // if (err) throw err;  
+    // console.log("myScores: ");
+    // console.log(result);
+    // res.send(result);
+    // });  
  })
