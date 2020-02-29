@@ -17,7 +17,6 @@ class BonusQuestion extends React.Component {
     }
 
     myUpdate(){
-        console.log("MY UPDATE")
         this.props.updateIndex();
     }
 
@@ -30,7 +29,6 @@ class BonusQuestion extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        console.log("okokokok")
         axios.post('/quizData', {
             number: this.state.number,
             expiry: this.state.expiry,
@@ -39,15 +37,12 @@ class BonusQuestion extends React.Component {
             score: this.props.score
           })
           .then((response) => {
-            console.log(response);
-            console.log(this.props);
             this.props.updateIndex();
 
           })
           .catch(function (error) {
             console.log(error);
           });
-        console.log("REACHE END");
     }
 
     render(){

@@ -34,8 +34,6 @@ class App extends React.Component {
         updateIndex = {this.updateIndex}
         addScore = {this.addScore}
         />) 
-        //console.log(myQuizData);
-        //console.log("SAKJSAKJASKJ");
 
         this.setState({
           quizData : myQuizData
@@ -68,8 +66,6 @@ class App extends React.Component {
   }
 
   updateUsername({target}){
-    console.log(target.placeholder)
-    //console.log(value)
     this.setState({username : target.placeholder});
     this.updateIndex();
   }

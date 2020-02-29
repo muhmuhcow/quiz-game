@@ -22,8 +22,6 @@ class QuizObject extends React.Component {
 
     handleAnswer(event){
         let {value} = event.target;
-        console.log(value);
-        console.log(this.state.answer);
 
         if (value === this.state.answer){
             this.setState({
