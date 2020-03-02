@@ -1,5 +1,6 @@
 import React from 'react'
 import Score from "./Score"
+import "./styles/Highscores.css"
 const axios = require('axios').default;
 
 class Highscores extends React.Component {
@@ -37,10 +38,10 @@ class Highscores extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="Highscore">
                 <h2>Highscores</h2>
-                <table>
-                    <tr>
+                <table className="table" cellspacing="40">
+                    <tr style={{fontWeight:"bold"}}>
                         <td>Player</td>
                         <td>Score</td> 
                     </tr>
