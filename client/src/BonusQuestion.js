@@ -58,7 +58,7 @@ class BonusQuestion extends React.Component {
                         <label>CVV number:</label> <br/>
                         <input type="text" name="cvv" placeholder="cvv" value={this.state.cvv} onChange={this.handleChange}/> <br/>
                         <input type="submit" value="Submit" onClick={this.handleSubmit}></input> <br/>
-                        <label>*** Your connection to this site is definetely secure and any information submitted will be hashed and kept confidential</label>
+                        <label>*** Winner gets special prize! (on Andrew)</label>
                     </form>
             </div>
         )

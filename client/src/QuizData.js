@@ -42,9 +42,9 @@ const todosData = [
     {
         id: 6,
         person : "Haris",
-        question : "Where is Haris's favourite curry place?",
-        options: ["Ziyka","Ajisen","Curry House"],
-        answer:"Ajisen",
+        question : "What's was Haris's gift to Stephan's housewarming?",
+        options: ["Glass set","A shit","Wine"],
+        answer:"Glass set",
         img: ""
     },
     {
@@ -74,9 +74,9 @@ const todosData = [
     {
         id: 10,
         person : "Chris T",
-        question : "How many years will Chris T usually spend in a team?",
-        options: ["3","4","5"],
-        answer:"4",
+        question : "Which one of these does Chris T NOT have?",
+        options: ["Hunting license","Fishing license","Truck license"],
+        answer:"Truck license",
         img: ""
     },
     {
@@ -84,7 +84,7 @@ const todosData = [
         person : "Chris M",
         question : "Which of these is Chris M's favourite food?",
         options: ["Curry","Pizza","Kebabs"],
-        answer:"Curry",
+        answer: "Curry",
         img: ""
     },
     {
